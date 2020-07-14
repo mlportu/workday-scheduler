@@ -16,7 +16,7 @@ $("#task").on("click", "p", function(){
   });
 
   //Task needs to be updated
-$("#task").on("blur", "textarea", function(){
+$("#task").on("blur", "textarea", function() {
   //get the textareas; current value/text
     var text = $(this)
       .val()
@@ -44,3 +44,7 @@ $("#task").on("blur", "textarea", function(){
     // replace textarea with p element
     $(this).replaceWith(taskP);
   });    
+
+  $("#save-btn").on("click", function(){
+      console.log("<save button> was clicked");
+  });

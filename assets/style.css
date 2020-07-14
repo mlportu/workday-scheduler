@@ -14,6 +14,10 @@ textarea{
   padding: 10px;
 }
 
+p{
+  height:100%;
+}
+
 .jumbotron {
   /* done */
   text-align: center;
@@ -72,6 +76,6 @@ textarea{
 
 .saveBtn i:hover {
   /* done */
-  font-size: 30px;
+  font-size: 20px;
   transition: all .3s ease-in-out;
 }
