@@ -2,7 +2,7 @@ var Today = (moment().format("MMMM D, YYYY"))
     $("#currentDay").text(Today);
 
 //Task update with click
-$("#task").on("click", "p", function(){
+$(".task").on("click", "p", function(){
     console.log("<p> was clicked");
     var text =$(this)
       .text()
@@ -16,7 +16,7 @@ $("#task").on("click", "p", function(){
   });
 
   //Task needs to be updated
-$("#task").on("blur", "textarea", function() {
+$(".task").on("blur", "textarea", function() {
   //get the textareas; current value/text
     var text = $(this)
       .val()
@@ -45,6 +45,7 @@ $("#task").on("blur", "textarea", function() {
     $(this).replaceWith(taskP);
   });    
 
-  $("#save-btn").on("click", function(){
+  $(".saveBtn").on("click", function(){
       console.log("<save button> was clicked");
+      console.log($(".saveBtn").index(this));
   });
