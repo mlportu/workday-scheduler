@@ -1,3 +1,13 @@
+tasks = [];
+
+//load tasks
+var loadTasks = function(){
+    tasks = JSON.parse(localStorage.getItem("tasks"))
+    if(!tasks){
+        tasks={};
+    }
+}
+
 var Today = (moment().format("MMMM D, YYYY"))
     $("#currentDay").text(Today);
 
@@ -33,9 +43,13 @@ $(".task").on("blur", "textarea", function() {
   });    
 
   //save tasks
+
   $(".saveBtn").on("click", function(){
       console.log("<save button> was clicked");
-      console.log($(".saveBtn").index(this));
-      var text = $(this).parent().find("p").text();
-      console.log(text);
+      var index = $(".saveBtn").index(this);
+      console.log(index)
+      tasks[index] = $(this).parent().find("p").text();
+      console.log(tasks)
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+
   });
