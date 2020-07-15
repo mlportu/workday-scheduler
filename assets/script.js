@@ -12,19 +12,20 @@ var loadTasks = function(){
         console.log(tasks[i])
         
         var firstHour = index + 8
-        var taskP = $("<p>").addClass("text-item-" + firstHour).text(tasks[i])
+        var taskP = $("<p>").addClass("description task-item-" + firstHour).text(tasks[i])
         console.log(firstHour)
         console.log(taskP);
         $(".task-" + firstHour).append(taskP);
     }
-    }
+}
     
 var Today = (moment().format("MMMM D, YYYY"))
     $("#currentDay").text(Today);
 
+
 //Task update with click
-$(".task").on("click", "p", function(){
-    // console.log("<p> was clicked");
+$(".taskBin").on("click", "p", function(){
+    console.log("<p> was clicked");
     var text =$(this)
       .text()
       .trim();
@@ -37,7 +38,7 @@ $(".task").on("click", "p", function(){
   });
 
   //Task needs to be updated
-$(".task").on("blur", "textarea", function() {
+$(".taskBin").on("blur", "textarea", function() {
   //get the textareas; current value/text
     var text = $(this)
       .val()
@@ -58,7 +59,7 @@ $(".task").on("blur", "textarea", function() {
   $(".saveBtn").on("click", function(){
     //   console.log("<save button> was clicked");
       var index = $(".saveBtn").index(this);
-    //   console.log(index)
+      console.log(index)
       tasks[index] = $(this).parent().find("p").text();
     //   console.log(tasks)
       localStorage.setItem("tasks", JSON.stringify(tasks));
