@@ -24,9 +24,10 @@ var Today = (moment().format("MMMM D, YYYY"))
     $("#currentDay").text(Today);
 
 //color code hours bins
+var hourAudit =function(){
     var currentHour = moment().hour() 
      
-    for(var i=8; i<17; i++){
+    for(var i=8; i<18; i++){
         var taskArea = $("#task-"+i)  
         if(currentHour<i){
             $(taskArea).addClass("past");
@@ -36,6 +37,7 @@ var Today = (moment().format("MMMM D, YYYY"))
             $(taskArea).addClass("future")
         }
     }
+}
 
 //Task update with click
 $(".taskBin").on("click", "p", function(){
@@ -79,3 +81,4 @@ $(".taskBin").on("blur", "textarea", function() {
   });
 
   loadTasks();
+  hourAudit();
