@@ -80,5 +80,8 @@ $(".taskBin").on("blur", "textarea", function() {
       localStorage.setItem("tasks", JSON.stringify(tasks));
   });
 
+  setInterval(function(){
+      hourAudit();},1000*60*60);
+
   loadTasks();
   hourAudit();
