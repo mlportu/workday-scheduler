@@ -22,19 +22,6 @@ $(".task").on("blur", "textarea", function() {
       .val()
       .trim();
     console.log(text)
-//     // get teh parent ul's id attribute
-//     var status = $(this)
-//       .closest(".list-group")
-//       .attr("id")
-//       .replace("list-", "");
-
-//     //get the task's position in the list of other li elements
-//     var index = $(this)
-//       .closest(".list-group-item")
-//       .index();
-
-//     tasks[status][index].text = text;
-//     saveTasks();
 
     //recreate p element
     var taskP = $("<p>")
@@ -45,7 +32,10 @@ $(".task").on("blur", "textarea", function() {
     $(this).replaceWith(taskP);
   });    
 
+  //save tasks
   $(".saveBtn").on("click", function(){
       console.log("<save button> was clicked");
       console.log($(".saveBtn").index(this));
+      var text = $(this).parent().find("p").text();
+      console.log(text);
   });
