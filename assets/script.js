@@ -14,8 +14,8 @@ var printTasks = function(){
 
         var taskP = $("<p>").addClass("description task-item-" + list).text(arr)
         
-        console.log(list)
-        console.log(taskP);
+        // console.log(list)
+        // console.log(taskP);
 
         $("#task-item-" + list).replaceWith(taskP);
     })
@@ -44,7 +44,7 @@ var hourAudit =function(){
 
 //Task update with click
 $(".taskBin").on("click", "p", function(){
-    console.log("<p> was clicked");
+    // console.log("<p> was clicked");
     var text =$(this)
       .text()
       .trim();
@@ -62,7 +62,7 @@ $(".taskBin").on("blur", "textarea", function() {
     var text = $(this)
       .val()
       .trim();
-    console.log(text)
+    // console.log(text)
 
     //recreate p element
     var taskP = $("<p>")
@@ -75,9 +75,9 @@ $(".taskBin").on("blur", "textarea", function() {
 
   //Save tasks
   $(".saveBtn").on("click", function(){
-      console.log("<save button> was clicked");
+    //   console.log("<save button> was clicked");
       var index = $(".saveBtn").index(this);
-      console.log(index)
+    //   console.log(index)
       tasks[index] = $(this).parent().find(".taskItem").text();
       localStorage.setItem("tasks", JSON.stringify(tasks));
   });
