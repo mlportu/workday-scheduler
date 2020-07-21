@@ -16,7 +16,7 @@ Each hour will be colored depending on if that hour is in the past (grey), futur
 * bootstrap API
 
 ## Website
-
+https://mlportu.github.io/workday-scheduler/
 
 ## Contribution
 Made by Mike Portu
