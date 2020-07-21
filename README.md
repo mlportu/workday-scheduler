@@ -18,8 +18,7 @@ Each hour will be colored depending on if that hour is in the past (grey), futur
 ## Website
 https://mlportu.github.io/workday-scheduler/
 
-## Screenshot
-./assets/Workday-Scheduler.png
+![web page screenshot](assets/Workday-Scheduler.png/)
 
 ## Contribution
 Made by Mike Portu
